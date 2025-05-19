@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Donate Medicine</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Donate Medicine</h1>
+    <nav>
+      <a href="{{ url_for('home') }}" class="btn">Home</a>
+      <a href="{{ url_for('donate') }}" class="btn">Donate Medicine</a>
+      <a href="{{ url_for('view_medicines') }}" class="btn">View Medicines</a>
+    </nav>
+
+    <form action="{{ url_for('donate') }}" method="POST" class="form">
+      <input type="text" name="name" placeholder="Medicine Name" required />
+      <input type="text" name="expiry" placeholder="Expiry Date (e.g. 2025-12-31)" required />
+      <input type="text" name="quantity" placeholder="Quantity" required />
+      <input type="text" name="city" placeholder="City" required />
+      <input type="text" name="donor" placeholder="Donor Name" required />
+      <input type="text" name="mobile" placeholder="Mobile Number" required />
+      <button type="submit" class="btn submit-btn">Donate</button>
+    </form>
+  </div>
+</body>
+</html>

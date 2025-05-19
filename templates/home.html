@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Medicine Donor - Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Medicine Donor App</h1>
+    <nav>
+      <a href="{{ url_for('home') }}" class="btn">Home</a>
+      <a href="{{ url_for('donate') }}" class="btn">Donate Medicine</a>
+      <a href="{{ url_for('view_medicines') }}" class="btn">View Medicines</a>
+    </nav>
+    <p>Welcome! You can donate medicines or view available medicines here.</p>
+    <p>This Adarsh ​​NGO is for those who cannot afford medicines.</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>View Medicines</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Available Medicines</h1>
+    <nav>
+      <a href="{{ url_for('home') }}" class="btn">Home</a>
+      <a href="{{ url_for('donate') }}" class="btn">Donate Medicine</a>
+      <a href="{{ url_for('view_medicines') }}" class="btn">View Medicines</a>
+    </nav>
+
+    {% if medicines %}
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Expiry</th>
+            <th>Quantity</th>
+            <th>City</th>
+            <th>Donor</th>
+            <th>Mobile</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for med in medicines %}
+          <tr>
+            <td>{{ med[1] }}</td>
+            <td>{{ med[2] }}</td>
+            <td>{{ med[3] }}</td>
+            <td>{{ med[4] }}</td>
+            <td>{{ med[5] }}</td>
+            <td><a href="tel:{{ med[6] }}" class="call-link">Call</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>No medicines found.</p>
+    {% endif %}
+  </div>
+</body>
+</html>
